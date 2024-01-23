@@ -14,7 +14,6 @@ import { addUser } from "../utils/userSlice";
 const Login = () => {
   const [isSignInform, setIsSigninform] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispath = useDispatch();
 
   const name = useRef(null);
@@ -53,24 +52,18 @@ const Login = () => {
               dispath(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
               // ...
               setErrorMessage(error.message);
             });
-          console.log(user);
-
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorMessage);
           setErrorMessage(errorMessage);
-          navigate("/");
-          // ..
         });
     } else {
       // signin logic
@@ -83,14 +76,13 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
+         
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
-          navigate("/");
         });
     }
   };
