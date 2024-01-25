@@ -11,3 +11,7 @@ export const API_OPTIONS = {
   },
 };
 export const TMDB_IMG = "https://image.tmdb.org/t/p/w200/";
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+];
