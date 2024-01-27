@@ -7,7 +7,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOTRmMTZkM2MzMmZlMTZiYWE1YmQ5NTkzMDY2ZmE4MCIsInN1YiI6IjY1OGQzM2RmZmRmYzlmNjBiMmUwMWE3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6y2D6IO_KXtTrltSv8AcBD8igUuImAvQL_q20OnwZuM",
+      "Bearer" + process.env.REACT_APP_TMDB_KEY,
   },
 };
 export const TMDB_IMG = "https://image.tmdb.org/t/p/w200/";
@@ -15,3 +15,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hindi", name: "Hindi" },
 ];
+
+export const GPT_API= process.env.REACT_APP_GPT_API
