@@ -17,7 +17,7 @@ const GptSearchBar = () => {
 
     }
     const handleGptSearchClick = async() =>{
-        const gptQuery = "Act as a movie recommendation system and suggest some movies for the query" + searchtext.current.value + ". only give me names of 5 movies, comma separated like the example result given ahead. Example Result : Gadar, Sholay, Don, Golmaal, Koi mil gaya"
+        const gptQuery = "Act as a movie recommendation system and suggest some movies for the query " + searchtext.current.value + ". only give me names of 5 movies, comma separated like the example result given ahead. Example Result : Gadar, Sholay, Don, Golmaal, Koi mil gaya. If input is already a movie name then return only name of that movie."
         const gptresults = await openai.chat.completions.create({
             messages: [{ role: 'user', content: gptQuery }],
             model: 'gpt-3.5-turbo',
